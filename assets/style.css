@@ -357,6 +357,30 @@ nav.main ul { gap: 2px; }
 nav.main a { padding: 8px 12px; }
 nav.main .sub a { white-space: normal; }
 
+/* ---------- Real shop photos ---------- */
+.product .thumb.photo { display: block; height: 240px; position: relative; overflow: hidden; background: var(--soft); flex: 0 0 auto; }
+.product .thumb.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; transition: transform .5s; }
+.product .body { position: relative; background: #fff; }
+.product:hover .thumb.photo img { transform: scale(1.05); }
+.in-store {
+  position: absolute; left: 10px; top: 10px; z-index: 1; background: rgba(255,255,255,.92); color: var(--navy);
+  font-size: .7rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+.slide .art.photo { padding: 10px; position: relative; }
+.slide .art.photo img { aspect-ratio: 4 / 3.4; object-fit: cover; object-position: center 35%; }
+.slide .art.photo .in-store { left: 20px; top: 20px; }
+
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 14px; }
+.gallery figure { position: relative; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); }
+.gallery figure.tall { grid-row: span 2; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.gallery figure:hover img { transform: scale(1.06); }
+.gallery figcaption {
+  position: absolute; inset: auto 0 0 0; padding: 26px 14px 10px; color: #fff; font-size: .88rem; font-weight: 600;
+  background: linear-gradient(transparent, rgba(18,28,74,.85));
+}
+@media (max-width: 860px) { .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; } }
+
 /* Small phones: keep header + grids inside the screen */
 .grid > * { min-width: 0; }
 @media (max-width: 520px) {
